@@ -27,10 +27,33 @@ public class CityList {
      * @return
      *      Return the sorted list
      */
+
     public List<City> getCities() {
         List<City> list = cities;
         Collections.sort(list);
         return list;
+    }
+
+    /**
+     * This function removes a city from the list if the city exists
+     * @param city
+     *      This is a candidate city to remove
+     */
+
+    public void deleteCity(City city) {
+        if(!(cities.contains(city))) {
+            throw new IllegalArgumentException();
+        }
+        cities.remove(city);
+    }
+
+    /**
+     * This function counts the number of cities
+     * @return
+     *      returns list size
+     */
+    public int countCities() {
+        return cities.size();
     }
 
 }
